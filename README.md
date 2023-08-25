@@ -12,7 +12,9 @@ Datasets used:
  
 # Dataset Description and Preprocessing
 
-Our dataset contains reviews for a movie named "Oppenheimer." Each review consists of several components that provide valuable information about the review and the reviewer's sentiment. We have both an uncleaned and a cleaned version of the data, and we'll outline the format of the uncleaned data followed by our preprocessing steps.
+Our dataset contains reviews for a movie named "Oppenheimer." Each review consists of several components that provide valuable information about the review and the reviewer's sentiment. We have both an uncleaned and a cleaned version of the data, and we'll outline the format of the uncleaned data followed by our preprocessing steps. Both the Barbie and Oppenheimer datasets have 7 columns, which are score (movie rating out of 10), title, username, date, the number of users who found this review helpful, the number of users who did not find this review helpful, and the review itself. The original dataset for Barbie had 796 reviews, while after cleaning it went down to 784 reviews, while for Oppenheimer, there were 2035 reviews and 2013 after cleaning. 
+
+In order to clean the datasets, we have used regular expressions that would extract the 7 pieces of information from each review and create a dataframe with 7 columns. 
 
 ## Uncleaned Data Example:
 
