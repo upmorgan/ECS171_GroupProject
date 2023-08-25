@@ -29,43 +29,43 @@ The data has 7 components, we will examine these using the above example
 The uncleaned data comprises the following components:
 
 ## Score: 
-**Ex: 9/10
+**Ex: 9/10** 
 A numerical score ranging from 1 to 10.
 ### Preprocessing Steps:
 We converted the score to an integer by extracting the numeric part (e.g., "9/10" becomes 9).
 
 ## Review Title: 
-**Ex: Murphy is exceptional
+**Ex: Murphy is exceptional** 
 A concise subtitle summarizing the review.
 ### Preprocessing Steps:
 No changes were made to this component. 
 
 ## Username:
- **Ex: Orlando_Gardner
+ **Ex: Orlando_Gardner** 
 The reviewer's username.
 ### Preprocessing Steps:
 No changes were made to this component.
  
 ## Date of Review: 
-**Ex: 19 July 2023
+**Ex: 19 July 2023** 
 The date when the review was posted.
 ### Preprocessing Steps:
 We excluded this feature, as it does not significantly contribute to the analysis due to the overlapping movie release dates.
  
 ## Review Text:
- **Ex:
+ **Ex: You'll have to have…… really great watch.** 
 The main review content.
 ### Preprocessing Steps:
 We retained the main review content for analysis but will be the main source of feature extraction.
 
 ## Helpful Score:
-#Ex: 1,413 out of 1,597 found this helpful. Was this review helpful? Sign in to vote.
+#Ex: 1,413 out of 1,597 found this helpful. Was this review helpful? Sign in to vote.** 
 The count of users who found the review helpful. 
 ### Preprocessing Steps:
 We extracted the count of helpful votes from this field.
 
 ## Permalink:  
-**Ex: Permalink<>?
+**Ex: Permalink<>?** 
 A link irrelevant for analysis.
 ### Preprocessing Steps:
 We excluded this component as it does not provide relevant information.
