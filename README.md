@@ -1,9 +1,13 @@
 # ECS171_GroupProject
 
+# Abstract
+We will be using review data for 2 movies, Barbie and Oppenheimer. The data will be taken from Kaggle, originally from IMDB. The data will include a text review and a 1-10 scale score of the movie. Our goal is to identify which movie a given review is from based on this data, using linear regression or deep learning models, supervised models. We will parse this information further in order to create new variables potentially more useful, variables like word count, and average word length. We may need to make an additional ML model, unsupervised, to find patterns in the data we want to use for our classification. Potential problems that can arise, include the use of the word itself in the comment, Oppenheimer will most likely be mentioned in a review about Barbie and vice versa, we may have to clean the data more, for emojis, unique values can create unnecessary bias.
 Datasets used:
 
 1. IMBD Oppenheimer Review: https://www.kaggle.com/datasets/ibrahimonmars/84k-reviews-on-oppenheimer-dataset/discussion
 2. IMBD Barbie: https://www.kaggle.com/datasets/ibrahimonmars/imdb-reviews-on-barbie?select=imdb_barbie_Uncleaned.csv
+
+
 
  
 # Dataset Description and Preprocessing
