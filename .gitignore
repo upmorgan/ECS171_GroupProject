@@ -1,7 +1,7 @@
 ### Example user template template
 ### Example user template
 
-*.csv
+*.csv*
 
 # IntelliJ project files
 .idea
