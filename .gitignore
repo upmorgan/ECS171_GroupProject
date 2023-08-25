@@ -1,6 +1,8 @@
 ### Example user template template
 ### Example user template
 
+*.csv
+
 # IntelliJ project files
 .idea
 *.iml
