@@ -14,6 +14,9 @@ Datasets used:
 
 1. IMBD Oppenheimer Review: https://www.kaggle.com/datasets/ibrahimonmars/84k-reviews-on-oppenheimer-dataset/discussion
 2. IMBD Barbie: https://www.kaggle.com/datasets/ibrahimonmars/imdb-reviews-on-barbie?select=imdb_barbie_Uncleaned.csv
+
+**Notice: The oringal dataset contain large files (>100MB), and thus not able to be uploaded to github. The user should 
+download and unzip the original dataset to the local machine and put them in the `./data` directory.**
  
 ## Dataset Description and Preprocessing
 
@@ -50,6 +53,31 @@ People_Found_Helpful are the number of people who viewed review and clicked on t
 People_Not_Found_Helpful are the number of people who viewed review and didn't click on the "helpful" button.
 
 isBarbie? is a boolean value indicating whether the review is for barbie or oppenheimer. This is the target variable.
+
+## Added Feature
+
+From the text provided, we created new numerical data frame. Word frequency and sentiment analysis is under construction.
+
+The numerical data frame contains following extra information:
+
+```
+| Length_of_Title | Length_of_Username | Length_of_Review | Helpful_Ratio |
+```
+
+## Preprocssing Planning
+
+Score will be normalized to 0~1 by multiplying 1/10. The length of title, length of username, leng of review will be 
+normalized basedon sklearn.MinMaxScaler. Depending on result and furthur exploration, all above value might be standardized.
+
+Frequency of words will be normalized with sklearn.MinMaxScaler once constructed. The coordination will be caclated and 
+the first 100~ related token will be selected for future use. Too much words might result in slow trainning speed, and thus
+the actual number of words selected might subject to change.
+
+Sentiment data is still under construction. Once constructed, they will be encoded with one-hot-encoding.
+
+In exmination of data, we found that reviews of both oppenheimer and barbie tend to invole in each other for comparision, thus 
+we are particularly intersted in certain words such as names of directors, names of actors, names of characters or places in 
+both movie will be selected out and examed in detaile.
 
 ## Data Example:
 
