@@ -112,5 +112,5 @@ Permalink<>?
 ### Cleaned Data
 
 ```
-[9, "Murphy is exceptional", Orlando_Gardner, 2023-07-19, 1413, 1587, "You'll have ... great watch.", 0]
+[9, "Murphy is exceptional", "Orlando_Gardner", 2023-07-19, 1413, 1587, "You'll have ... great watch.", 0]
 ```
