@@ -134,7 +134,6 @@ The other model is build with decision tree, giving us high accuracy. The model 
 is the only feature used to train the decision tree. But we were able to have a high accuracy(0.9) with this method. Another interesting
 point is that this approach did not account for data unabalance, despite this the model was able to perform pretty well. The test MSE 
 for this model was 0.098 and the Train MSE was 0.06 suggesting no overfitting of the model. When we tested via cross entropy Test Log_loss was 3.5
-and Train log_loss was 2.4 a difference of 1(0.14 ish), this is somewhat inconclusive, it could be pointing towards overfitting.
-Further testing is required.
+and Train log_loss was 2.4 a difference of 1(0.14 ish), this is somewhat inconclusive, plotting seems overfitting is possible. Further research required.
 
 
