@@ -114,3 +114,20 @@ Permalink<>?
 ```
 [9, "Murphy is exceptional", "Orlando_Gardner", 2023-07-19, 1413, 1587, "You'll have ... great watch.", 0]
 ```
+
+## Miltestone 2
+
+> We are doing a ensemble model, each model are build and tested on different branch. Since we haven't finish the building,
+> and testing phase of them, we are not merging them to the `main` branch. If you want to look through the codes, please go
+> to their branch: `Decision_Tree` and `text_process_model`. A neruonetwork is also being built but the group member has
+> some issue with github. We will try to fix it on Monday.
+
+Becuase the data is very unbalanced (700 for barbie, 2000+ for oppenheimer) we had issue for model training becuase they tend 
+to classify everyone as oppenheimer (which is cheating). And we are at the underfitting side of it since it neither perform 
+well on training nor on the testing set. Two solution are proposed, increase learing rate and use `Adam` optimizer which should 
+auto ajust the learning rate depending the result from previous epochs. The other solution is to increase epochs. However, `BERT`
+model require lots of computation to tune the parameters, increasing epochs or decreasing batch size is not feasiblely possible.
+Luckily, the `Adam` work and didn't overfit after examing the test cross-entropy and training cross-entropy. Kfold validation will 
+be run later (it took long time). 
+
+The other model is build with decision tree, giving us high accuracy though the over/underfitting haven't been tested.
