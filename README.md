@@ -130,4 +130,7 @@ model require lots of computation to tune the parameters, increasing epochs or d
 Luckily, the `Adam` work and didn't overfit after examing the test cross-entropy and training cross-entropy. Kfold validation will 
 be run later (it took long time). 
 
-The other model is build with decision tree, giving us high accuracy though the over/underfitting haven't been tested.
+The other model is build with decision tree, giving us high accuracy though the over/underfitting haven't been tested. The model 
+uses Bag Of Words, created from review column, this is the only feature used to train the decision tree. But we were able to have
+a high accuracy(0.9) with this method. Another interesting point is that this approach did not account for data unabalance, despite 
+this the model was able to perform pretty well. 
