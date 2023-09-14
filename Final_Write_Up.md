@@ -175,7 +175,7 @@ gives out more related words than just the review.
 In order to accurately classify whether or not a review is for Oppenheimer or Barbie. We explored three different approaches for text classification:
 
 BERT Model: 
-We used a pre-trained BERT model, Due to computational constraints, we couldn't fine-tune the model extensively but found that 10 epochs with a batch size of 512 worked well.
+We used a pre-trained BERT model, Due to computational constraints, we couldn't fine-tune the model extensively but found that 10 epochs with a batch size of 512 worked well using the k-fold method.
 
 Bag of Words (BoW) Model: We employed a BoW approach, where we converted text reviews into BOW then trained a decision tree classifier on these vectors. We also determined that a max depth of 5 produced optimal results by comparing the training/testing errors that we got from running the model multiple times with different value of max depth of the tree.
 
