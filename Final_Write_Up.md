@@ -177,7 +177,7 @@ In order to accurately classify whether or not a review is for Oppenheimer or Ba
 BERT Model: 
 We used a pre-trained BERT model, Due to computational constraints, we couldn't fine-tune the model extensively but found that 10 epochs with a batch size of 512 worked well.
 
-Bag of Words (BoW) Model: We employed a BoW approach, where we converted text reviews into BOW then trained a decision tree classifier on these vectors and determined that a max depth of 5 produced optimal results.
+Bag of Words (BoW) Model: We employed a BoW approach, where we converted text reviews into BOW then trained a decision tree classifier on these vectors. We also determined that a max depth of 5 produced optimal results by comparing the training/testing errors that we got from running the model multiple times with different value of max depth of the tree.
 
 Artificial Neural Network (ANN) Model: We created an ANN model that used word frequency data for specific manually selected keywords as features. We found that 60 epochs with an Adam optimizer and a learning rate of 0.001 worked best. Performing grid search on batch size and epochs, we were able to confirm the validity of our hyperparameters.
 
