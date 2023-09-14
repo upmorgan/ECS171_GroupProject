@@ -35,18 +35,67 @@ statiscal data that can match either of them.
 
 ## Methods
 
-Three different models are built and tuned: BERT classifier, Bag of Words Decision Tree, and ANN based on present of 
-certain keywords (name of character, place, certain punctuation). One novel point of it is that, similar to random 
-forest, each of them are taking different features. The BERT take in the review text directly, Bag of Words take in 
-vectorized frequency data, and ANN extract the frequency of certain words that human mannually put into it.
+The original datasets were given by python scripts. It contains two columns: text data and score. We used regular 
+expression to extract data that can be used:
 
-The ANN model is kind of similar to the "human in the loop" algorithms. Human being extract the words that is mostly 
-representitive, and feed them to the algorithm directly. This largely accelerate the speed of algorithm.
+```
+| Score | Title | Username | Date | People_Found_Helpful | People_Not_Found_Helpful | Review | isBarbie? |
+```
+
+In data exploratation, we found the raw data we extracted are not strongly related except for the `score`.
+Hence, more features extraction methods are needed.
+
+Three different models are applied: BERT, Bag of Words, and word frequency of featured vocabulary.
+
+### BERT
+
+In BERT model, `review` are used as features. Becuase of the computation required for training, we cannot tuned
+the model very well since a 10 epoch, 512 batch_size require more than 10 mins to train (in a 16 threads 4GHz machine)
+
+By reviewing the history of training, we found in 512 batch_size, 10 epoch does not show significant overfitting 
+nor underfitting.
+
+### Bag of Words
+
+The `review` is first vectorized with built in method of SKlearn feature extraction module which produce vectorized 
+data of word count in each observation. Then, a decision tree is trained on it. To determine the best depth, 
+of the tree, we graphed the error of train/test vs depth and decided the max_depth = 5.
+
+### ANN
+
+The word frequency for certain manually decided words are calcualted for each observation and put in as features 
+in an ANN. The list of words can be found in the notebook.
+
+By graphing the error of train/test vs epoch, we found epoch = 60 to be the crossing point. Another 
+interesting property we observed is that the training loss is higher than the validation loss when it is not 
+overfitting. With manual parameter searching, we found Adam optimizer with learning rate of 0.001 to be the 
+best perfromed.
+
+![image](https://github.com/upmorgan/ECS171_GroupProject/assets/45218090/d8946b18-01b1-431e-a057-ed7df8041a08)
 
 ## Results
 
 ## Dicussion
 
+The ANN based on present of certain keywords (name of character, place, certain punctuation). One novel point 
+of it is that, similar to random forest, each of them are taking different features. The BERT take in the 
+review text directly, Bag of Words take in vectorized frequency data, and ANN extract the frequency of certain 
+words that human mannually put into it.
+
+The ANN model is kind of similar to the "human in the loop" algorithms. Human being extract the words that 
+is mostly representitive, and feed them to the algorithm directly. This largely accelerate the speed of algorithm.
+
 ## Conclusion
 
 ## Collaboration Section
+
+Yuxin Ren: Data cleaning with regular expression, first milestone write up, final write up, ensemble, debugging, 
+model analysis suggestion.
+
+Ulysses Morgan: Create Github repo, first milestone write up, Bag of Words model
+
+Ivan Karpov: ANN model and tuning
+
+Evan Tan: Data cleaning, BERT model
+
+Jason Yoo: hyper parameter tuning of Bag of Words model, 
