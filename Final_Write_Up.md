@@ -162,9 +162,14 @@ on testing dataset.
 However, the BERT model requires a lot computation in training and predicting phase which made it hard to be 
 used in our case due to the low computation resources.
 
-However, from the recall and precision we saw that the unbalanced data does made the accuracy less helpful in 
+From the recall and precision we saw that the unbalanced data does made the accuracy less helpful in 
 scoring the models. A resampling method can be applied or with more data collected to make the decision tree 
 better in prediction.
+
+Since the ANN with words manually assigned shows great performance in comparing the others, the next step of 
+of this study will be exploring method to identify those words that is mostly related to the subject. This can 
+be done offline with only statistical analysis of words or can be done with online seraching engine that might
+gives out more related words than just the review.
 
 ## Conclusion
 
