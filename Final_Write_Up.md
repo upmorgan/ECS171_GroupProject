@@ -61,6 +61,9 @@ The `review` is first vectorized with built in method of SKlearn feature extract
 data of word count in each observation. Then, a decision tree is trained on it. To determine the best depth, 
 of the tree, we graphed the error of train/test vs depth and decided the max_depth = 5.
 
+![image](https://github.com/upmorgan/ECS171_GroupProject/assets/45218090/1f015967-313f-4abf-830d-7d48fb41c6df)
+
+
 ### ANN
 
 The word frequency for certain manually decided words are calcualted for each observation and put in as features 
@@ -73,19 +76,99 @@ best perfromed.
 
 ![image](https://github.com/upmorgan/ECS171_GroupProject/assets/45218090/d8946b18-01b1-431e-a057-ed7df8041a08)
 
+### Ensemble
+
+After all the model is trained, a new 2 layer ANN is trained based on the predicted data of previous three 
+models. This is a customized ensemble network supposed to add weights on each models's vote.
+
 ## Results
 
-## Dicussion
+Train/validation error vs Epocs of ensemble:
+
+![image](https://github.com/upmorgan/ECS171_GroupProject/assets/45218090/bf8b9c38-c992-4502-b859-b23319a84495)
+
+Ensemble model report:
+
+```
+              precision    recall  f1-score   support
+
+           0       1.00      0.74      0.85       560
+           1       0.00      0.00      0.00         0
+
+    accuracy                           0.74       560
+   macro avg       0.50      0.37      0.43       560
+weighted avg       1.00      0.74      0.85       560
+```
+
+Simple Vote with only BOW and ANN
+
+```
+              precision    recall  f1-score   support
+
+           0       0.99      0.74      0.85       555
+           1       0.01      0.40      0.03         5
+
+    accuracy                           0.74       560
+   macro avg       0.50      0.57      0.44       560
+weighted avg       0.98      0.74      0.84       560
+```
+
+Report from single models:
+
+```
+BERT Test
+              precision    recall  f1-score   support
+
+           0       0.17      0.96      0.29        75
+           1       0.98      0.29      0.45       485
+
+    accuracy                           0.38       560
+   macro avg       0.58      0.63      0.37       560
+weighted avg       0.87      0.38      0.43       560
+
+========================================
+BoW Test
+              precision    recall  f1-score   support
+
+           0       0.94      0.74      0.83       530
+           1       0.05      0.23      0.08        30
+
+    accuracy                           0.71       560
+   macro avg       0.50      0.49      0.46       560
+weighted avg       0.90      0.71      0.79       560
+
+========================================
+ANN Test
+              precision    recall  f1-score   support
+
+           0       1.00      0.91      0.95       447
+           1       0.74      0.98      0.84       113
+
+    accuracy                           0.93       560
+   macro avg       0.87      0.95      0.90       560
+weighted avg       0.94      0.93      0.93       560
+```
+
+## Discussion
 
 The ANN based on present of certain keywords (name of character, place, certain punctuation). One novel point 
 of it is that, similar to random forest, each of them are taking different features. The BERT take in the 
 review text directly, Bag of Words take in vectorized frequency data, and ANN extract the frequency of certain 
-words that human mannually put into it.
+words that human mannually put into it. This makes the model kind of similar to the "human in the loop"
+algorithms. Human being extract the words that is mostly representitive, and feed them to the algorithm 
+directly. This largely accelerate the speed of algorithm, and it showed really good results with 90% accuracy 
+on testing dataset.
 
-The ANN model is kind of similar to the "human in the loop" algorithms. Human being extract the words that 
-is mostly representitive, and feed them to the algorithm directly. This largely accelerate the speed of algorithm.
+However, the BERT model requires a lot computation in training and predicting phase which made it hard to be 
+used in our case due to the low computation resources.
+
+However, from the recall and precision we saw that the unbalanced data does made the accuracy less helpful in 
+scoring the models. A resampling method can be applied or with more data collected to make the decision tree 
+better in prediction.
 
 ## Conclusion
+
+
 
 ## Collaboration Section
 
