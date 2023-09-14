@@ -1,5 +1,7 @@
 # ECS171_GroupProject
 
+> Please see the 'Final_Write_Up.md' for the final report.
+
 ## Abstract
 We will be using review data for 2 movies, Barbie and Oppenheimer. The data will be taken from Kaggle, originally from 
 IMDB. The data will include a text review and a 1-10 scale score of the movie. Our goal is to identify which movie a 
