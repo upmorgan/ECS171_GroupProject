@@ -57,9 +57,10 @@ nor underfitting.
 
 ### Bag of Words
 
-The `review` is first vectorized with built in method of SKlearn feature extraction module which produce vectorized 
-data of word count in each observation. Then, a decision tree is trained on it. To determine the best depth, 
+The `review` is  vectorizized into numerical vectors by counting the frequency of words in each review. This is done by first tokenizing the words in the training data based on unique words than creating a a vector equal to the size of our vocabulary this is done with a built in method of SKlearn feature extraction module Then, based on this newly extracted feature a decision tree is trained on it. To determine the best depth, 
 of the tree, we graphed the error of train/test vs depth and decided the max_depth = 5.
+
+The Bag of Words (BOW) model is a text representation technique used in natural language processing (NLP) and machine learning. It transforms text data into numerical vectors by counting the frequency of words in each document. These vectors serve as features for machine learning models. For example, in sentiment analysis, each word in a sentence is assigned a numeric value based on its frequency in a document. This approach simplifies text analysis but doesn't consider word order or meaning. To determine the best depth for a decision tree trained on BOW vectors, you can graph training and testing errors against different depths and choose the one with optimal performance, such as a max_depth of 5.
 
 ![image](https://github.com/upmorgan/ECS171_GroupProject/assets/45218090/1f015967-313f-4abf-830d-7d48fb41c6df)
 
