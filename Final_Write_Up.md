@@ -13,8 +13,8 @@ for emojis, unique values can create unnecessary bias.
 
 Datasets used:
 
-1. IMBD Oppenheimer Review: https://www.kaggle.com/datasets/ibrahimonmars/84k-reviews-on-oppenheimer-dataset/discussion
-2. IMBD Barbie: https://www.kaggle.com/datasets/ibrahimonmars/imdb-reviews-on-barbie?select=imdb_barbie_Uncleaned.csv
+1. IMDB Oppenheimer Review: https://www.kaggle.com/datasets/ibrahimonmars/84k-reviews-on-oppenheimer-dataset/discussion
+2. IMDB Barbie: https://www.kaggle.com/datasets/ibrahimonmars/imdb-reviews-on-barbie?select=imdb_barbie_Uncleaned.csv
 
 **Notice: The oringal dataset contain large files (>100MB), and thus not able to be uploaded to github. The user should 
 download and unzip the original dataset to the local machine and put them in the `./data` directory.**
