@@ -172,6 +172,26 @@ gives out more related words than just the review.
 
 ## Conclusion
 
+In order to accurately classify whether or not a review is for Oppenheimer or Barbie. We explored three different approaches for text classification:
+
+BERT Model: 
+We used a pre-trained BERT model, Due to having computational constraints, we couldn't fine-tune the model extensively but found that 10 epochs with a batch size of 512 worked well.
+
+Bag of Words (BoW) Model: We employed a  BoW approach, where we converted text reviews into BOW then We trained a decision tree classifier on these vectors and determined that a max depth of 5 produced optimal results.
+
+Artificial Neural Network (ANN) Model: We created an ANN model that used word frequency data for specific manually selected keywords as features.We found that 60 epochs with an Adam optimizer and a learning rate of 0.001 worked best.
+
+We also designed an ensemble model that combined predictions from the above three models to improve overall performance. BUt this yielded mix results
+
+The results showed that the ANN model with manually assigned keywords and BOW performed well, achieving 90% accuracy on the testing dataset. However, the BERT model was computationally intensive, limiting its practicality.
+
+We observed that dealing with unbalanced data affected the accuracy, and future work could involve data resampling or collecting more data to improve decision tree performance.
+
+In conclusion, this project demonstrated different approaches to classify text data into specific categories based on movie reviews. The ANN model with manually assigned keywords showed promising results and could be further refined by identifying more relevant keywords.
+
+
+
+
 
 
 ## Collaboration Section
